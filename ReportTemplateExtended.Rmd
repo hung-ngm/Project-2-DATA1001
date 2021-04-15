@@ -1,8 +1,8 @@
 ---
 title: "Reproducible Report Template - Basic"
 author: "Student/s SID"
-subtitle: "Project X"
-date: "University of Sydney | Unit of Study | MONTH YEAR"
+subtitle: "Project 2"
+date: "University of Sydney | DATA1001 | 2021"
 # You can change the title, subtitle, author etc.
 # if you do not want a subtitle, author, or date just delete or comment # the the line!
 output:
@@ -56,6 +56,10 @@ In the rmd file, you will see how you can load your own dataset from either 1) a
 
 # LOAD DATA v2 - uncomment the link below to: load data from local file
 #cars = read.csv("dataset file location")
+
+covids = read.csv("https://docs.google.com/spreadsheets/d/1uIAl63WR38zq9-DgNqL91gM1HaGjy8A8RWLPpn2NyEI/edit?resourcekey#gid=565601945")
+
+head(covids)
 
 # Quick look at top 5 rows of data
 head(mtcars)
