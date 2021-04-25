@@ -1,0 +1,30 @@
+Timestamp,age,gender,covidhobbyno,covidhobbytype,reliance,continue,nowhobbyno,nowhobbytype,discontinue
+13/04/2021 07:31:35,17-23,Male,2,"Cooking/baking, Learning Japanese",3,Yes,2,"Cooking/baking, Learning Japanese",
+13/04/2021 08:31:57,17-23,Female,1,"Sports/exercise, Cooking/baking",4,No,0,,"Not enough time, Was not suitable for me/became bored"
+13/04/2021 09:49:34,17-23,Female,0,"Literature, Music, Sports/exercise, Video games, Movies/TV shows",0,Yes,4,"Literature, Sports/exercise, Video games",Not enough time
+13/04/2021 14:32:02,17-23,Female,6,"Literature, Music, Sports/exercise, Arts, Video games, Movies/TV shows",4,Yes,4,"Music, Sports/exercise, Video games, Movies/TV shows","Not enough time, Bored"
+13/04/2021 18:01:32,17-23,Male,2,"Sports/exercise, Movies/TV shows",3,Yes,1,Movies/TV shows,Lack of motivation
+13/04/2021 18:28:10,17-23,Female,3,"Music, Arts, Video games, Movies/TV shows",2,Yes,2,"Music, Movies/TV shows",Not enough time
+13/04/2021 19:16:34,17-23,Male,6,"Literature, Sports/exercise, Arts, Video games, Cooking/baking, Movies/TV shows",3,Yes,3,"Literature, Sports/exercise, Arts, Video games, Cooking/baking, Movies/TV shows","Not enough time, Was not suitable for me/became bored"
+13/04/2021 19:39:21,17-23,Male,0,"Music, Sports/exercise, Video games, Movies/TV shows",5,Yes,0,,
+13/04/2021 19:40:04,17-23,Male,4,"Music, Sports/exercise, Video games, Cooking/baking",4,Yes,3,"Music, Sports/exercise, Video games",Was not suitable for me/became bored
+13/04/2021 20:12:09,17-23,Female,3,"Music, Arts, Video games, Movies/TV shows",2,Yes,2,"Music, Movies/TV shows",Not enough time
+13/04/2021 20:12:09,17-23,Female,4,"Sports/exercise, Video games, Cooking/baking, Movies/TV shows",4,Yes,2,"Cooking/baking, Movies/TV shows",Not enough time
+14/04/2021 17:36:03,17-23,Male,3,"Music, Video games, Movies/TV shows",5,Yes,2,"Video games, Movies/TV shows",Not enough time
+14/04/2021 18:00:11,17-23,Male,2,"Cooking/baking, Movies/TV shows",3,Yes,2,"Cooking/baking, Movies/TV shows",
+14/04/2021 18:09:29,17-23,Female,2,"Music, Movies/TV shows",4,Yes,2,"Music, Movies/TV shows",Not enough time
+14/04/2021 18:22:17,17-23,Female,2,"Music, Sports/exercise",2,Yes,2,"Music, Sports/exercise",Not enough time
+14/04/2021 18:48:32,17-23,Male,3,"Music, Video games, Movies/TV shows",1,Yes,3,"Music, Video games, Movies/TV shows",Not enough time
+14/04/2021 19:21:50,17-23,Male,3,"Music, Sports/exercise, Movies/TV shows",5,Yes,3,"Music, Sports/exercise, Movies/TV shows",Not enough time
+15/04/2021 04:21:51,17-23,Female,2,"Cooking/baking, Movies/TV shows, Learning a new language",4,Yes,3,"Cooking/baking, Movies/TV shows, Learning a new language",
+15/04/2021 04:38:47,17-23,Male,1,Movies/TV shows,2,No,1,Movies/TV shows,Not enough time
+15/04/2021 04:54:08,17-23,Male,2,"Music, Sports/exercise, Video games, Movies/TV shows",3,No,4,"Music, Sports/exercise, Video games, Movies/TV shows",Was not suitable for me/became bored
+15/04/2021 04:55:35,17-23,Female,4,"Literature, Arts, Video games, Cooking/baking",2,No,2,"Literature, Arts",Not enough time
+15/04/2021 05:13:44,17-23,Male,4,"Music, Video games, Cooking/baking, Movies/TV shows",3,Yes,4,"Music, Video games, Cooking/baking, Movies/TV shows",
+15/04/2021 05:27:33,17-23,Male,2,"Sports/exercise, Video games",4,Yes,2,"Sports/exercise, Video games",Was not suitable for me/became bored
+15/04/2021 05:28:40,17-23,Male,2,"Music, Cooking/baking",5,Yes,1,Music,Was not suitable for me/became bored
+15/04/2021 05:32:35,17-23,Female,2,"Video games, Movies/TV shows",3,Yes,1,Movies/TV shows,Was not suitable for me/became bored
+15/04/2021 05:49:24,17-23,Male,3,"Sports/exercise, Video games, Movies/TV shows",3,Yes,1,Sports/exercise,Not enough time
+15/04/2021 09:17:43,17-23,Female,3,"Sports/exercise, Cooking/baking, Movies/TV shows",3,Yes,2,"Cooking/baking, Movies/TV shows",Not enough time
+18/04/2021 14:12:23,older than 37,Female,3,"Sports/exercise, Cooking/baking, Movies/TV shows",5,Yes,3,"Sports/exercise, Cooking/baking, Movies/TV shows",
+18/04/2021 14:40:11,older than 37,Male,0,"Music, Sports/exercise, Cooking/baking",1,Yes,0,Sports/exercise,

@@ -1,5 +1,5 @@
 ---
-title: "Reproducible Report Template - Basic"
+title: "Reproducible Report"
 author: "Student/s SID"
 subtitle: "Project 2"
 date: "University of Sydney | DATA1001 | 2021"
@@ -32,8 +32,9 @@ output:
 <br>
 
 # Executive Summary
-- The aim of this report is to ...
+- The aim of this report is to observe any effects of self-quarantines due to COVID-19 on people’s hobbies.
 - The main discoveries are ...
+
 
 <br>
 
@@ -51,25 +52,24 @@ In the rmd file, you will see how you can load your own dataset from either 1) a
 
 ```{r}
 
-# LOAD DATA v1 - uncomment the link below to: load data direct from html
-#cars = read.csv("dataset URL")
+#Load our data
+survey = read.csv("HobbiesCOVID19.csv")
 
-# LOAD DATA v2 - uncomment the link below to: load data from local file
-#cars = read.csv("dataset file location")
+# Remove the Timestamp column as it is not necessary for our report
+survey$Timestamp <- NULL
 
-survey = read.csv("data.csv")
-
-head(survey)
+# Quick look at the structure of data
+str(survey)
 
 # Quick look at top 5 rows of data
-head(mtcars)
+head(survey) 
+# Our data has 29 rows and 9 columns
 
-## Size of data
-# For the mtcars dataset, there are 32 rows (the types of cars) and 11 variables (properties of the cars).
-dim(mtcars)
+# Size of the data
+dim(survey)
 
-## R's classification of data
-class(mtcars)
+# R's classification of survey's data
+class(survey)
 
 ## R's classification of variables
 str(mtcars)
@@ -78,8 +78,8 @@ str(mtcars)
 
 Summary:
 
-- The data came from ...
-- The data is/is not valid because ...
+- The data came from our survey on Google form
+- The data is valid because ...
 - Possible issues include ...
 - Each row represents ...
 - Each column represents ...
@@ -88,13 +88,55 @@ Summary:
 
 ## Research Question 1
 
-Insert text and analysis. 
+How did COVID-19 affected people’s hobbies → Number of hobbies during and after covid, bar graph
+
+```{r}
+# Number of hobbies picked up during quarantine
+barplot(table(survey$covidhobbyno), main="Number of hobbies picked up during quarantine")
+
+#Number of hobbies now
+barplot(table(survey$nowhobbyno), main="Number of hobbies now")
+```
 
 Summary: 
 
+
 ## Research Question 2
 
-Insert text and analysis. 
+What kind of hobbies people start doing during Covid?
+
+```{r}
+# Install packages ggplot2
+library(ggplot2)
+
+
+p = ggplot(survey, aes(x=covidhobbytype))
+p + geom_bar()
+
+
+```
+
+## Research Question 3
+
+Is there a linear relationship between the number of hobbies and people’s reliance of hobbies (number of hobbies vs comfort level)
+
+```{r}
+# Construct a scatter plot
+plot(survey$covidhobbyno, survey$reliance)
+
+# Calculate the linear regression model to draw on the scatter plot
+L = lm(survey$covidhobbyno ~ survey$reliance)
+
+summary(L)
+
+L$coeff
+
+abline(L)
+
+# Caluculate the linear correlation coefficient
+cor(survey$covidhobbyno, survey$reliance)
+
+```
 
 Summary: 
 
