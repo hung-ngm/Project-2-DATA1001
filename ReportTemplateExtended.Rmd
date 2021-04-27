@@ -93,6 +93,8 @@ barplot(table(survey$nowhobbyno), main="Number of hobbies now")
 
 summary(survey$nowhobbyno)
 ```
+
+```{r}
 library(multicon)
 
 mean=c(mean(survey$covidhobbyno), mean(survey$nowhobbyno))
@@ -103,6 +105,8 @@ meanhobby = data.frame(names, mean, se)
 
 library(ggplot2)
 ggplot(meanhobby, aes(x=names, y=mean))+geom_bar(stat='identity')+geom_errorbar( aes(x=names, ymin=mean-se, ymax=mean+se), width=0.2, colour="black", alpha=0.9, size=0.8)
+
+```
 
 Summary: 
 
@@ -124,7 +128,11 @@ names(covidtypes)[names(covidtypes) == "Freq"] <- "Answers"
 p1 = ggplot(covidtypes, aes(x = Hobbies, y = Answers), ) + geom_bar(stat = "identity")+ theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1))
 p1
 
-#What kinds of hobbies people still do after quarantine?
+```
+
+What kinds of hobbies people still do after quarantine?
+
+```{r}
 
 nowhobbytypes=strsplit(survey$nowhobbytype, ", ")
 nowhobbytypes=table(unlist(nowhobbytypes))
@@ -170,7 +178,11 @@ Summary:
 
 # References
 
-Style: APA 
+APA: 
+
+- Krause, A.E., Dimmock, J., Rebar, A.L. and Jackson, B. (2021). Music Listening Predicted Improved Life Satisfaction in University Students During Early Stages of the COVID-19 Pandemic. Frontiers in Psychology, 11.
+- Michael Merschel (2020). Your pandemic hobby might be doing more good than you know. American Heart Association News. Accessed 20 April 2021.
+
 
 <br>
 
