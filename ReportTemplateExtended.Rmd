@@ -98,7 +98,7 @@ ggplot(meanhobby, aes(x=names, y=mean))+labs(title="Comparison between during qu
 
 ```
 
-Summary: 
+Summary: From the above 2 graphs, it can be seen that most people had picked up 2 hobbies during the quarantine. This can also similarly be seen in the number of hobbies they have as of now. The average number of hobbies people have picked up during quarantine and currently highlight that there is no significant difference but a slight decrease. Although no definite conclusion can be made due to the limitation of the data size, this may have occurred as COVID-19 has settled now, and people have gone back to their normal lives before the pandemic.
 
 ## Research Question 2
 
