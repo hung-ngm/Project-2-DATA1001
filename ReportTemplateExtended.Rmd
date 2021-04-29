@@ -1,16 +1,6 @@
 ---
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-title: "Reproducible Report"
-author: "510100726, 510073464, 500491775, 510046332"
-=======
 title: "Project 2: Impacts of Covid-19 on people' hobbies"
 author: "SID: 510100726, 510073464, 500491775, 510046332"
->>>>>>> Stashed changes
-=======
-title: "Project 2: Impacts of Covid-19 on people' hobbies"
-author: "SID: 510100726, 510073464, 500491775, 510046332"
->>>>>>> Stashed changes
 date: "University of Sydney | DATA1001 | 2021"
 output:
   html_document: 
@@ -103,19 +93,9 @@ ggplot(meanhobby, aes(x=names, y=mean))+labs(title="Comparison between during qu
 
 ```
 
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-Summary: From the above 2 graphs, it can be seen that most people had picked up 2 hobbies during the quarantine. This can also similarly be seen in the number of hobbies they have as of now. The average number of hobbies people have picked up during quarantine and currently highlight that there is no significant difference but a slight decrease. Although no definite conclusion can be made due to the limitation of the data size, this may have occurred as COVID-19 has settled now, and people have gone back to their normal lives before the pandemic.
-=======
 **Summary:**
 
 From the above 2 graphs, it can be seen that most people had picked up 2 hobbies during the quarantine. This can also similarly be seen in the number of hobbies they have as of now. The average number of hobbies people have picked up during quarantine and currently highlight that there is no significant difference but a slight decrease. Although no definite conclusion can be made due to the limitation of the data size, this may have occurred as COVID-19 has settled now, and people have gone back to their normal lives before the pandemic.
->>>>>>> Stashed changes
-=======
-**Summary:**
-
-From the above 2 graphs, it can be seen that most people had picked up 2 hobbies during the quarantine. This can also similarly be seen in the number of hobbies they have as of now. The average number of hobbies people have picked up during quarantine and currently highlight that there is no significant difference but a slight decrease. Although no definite conclusion can be made due to the limitation of the data size, this may have occurred as COVID-19 has settled now, and people have gone back to their normal lives before the pandemic.
->>>>>>> Stashed changes
 
 ## Research Question 2
 
@@ -205,10 +185,3 @@ APA:
 
 - Krause, A.E., Dimmock, J., Rebar, A.L. and Jackson, B. (2021). Music Listening Predicted Improved Life Satisfaction in University Students During Early Stages of the COVID-19 Pandemic. Frontiers in Psychology, 11.
 - Michael Merschel (2020). Your pandemic hobby might be doing more good than you know. American Heart Association News. Accessed 20 April 2021.
-
-
-<br>
-
-
-
-<br>
