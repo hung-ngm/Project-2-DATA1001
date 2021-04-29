@@ -1,6 +1,6 @@
 ---
 title: "Reproducible Report"
-author: ""
+author: "510100726, 510073464, 500491775, 510046332"
 date: "University of Sydney | DATA1001 | 2021"
 output:
   html_document: 
@@ -186,113 +186,6 @@ APA:
 
 <br>
 
-# Beyond the Basics - extending your abilities with RMarkdown
-This quick reference guide will cover some basic RMarkdown for use in your projects. 
 
-<br>
-
-## Lists
-
-Here is a basic list:
-
-- To do 1
-
-- To do 2
-
-- To do 3
-
-<br>
-
-## Links
-
-Here is a link to interesting web page:
-
-[Interesting Web Page](https://www.ted.com/topics/visualizations)
-
-<br>
-
-
-## Tables
-
-Here is a simple table.
-
-| Tables        | Are           | Cool  |
-|---------------|:-------------:|------:|
-| col 3 is      | right-aligned | $1600 |
-| col 2 is      | centered      |   $12 |
-| zebra stripes | are neat      |    $1 |
-
-<br> 
-
-## Images
-
-Here is am image. It has not been adjusted in the rmd file, so represents the true size of the original image. This image is sourced directly from an online url. 
-
-To learn more about adding images directly from your own computer, see the comments in this rmd file. 
-
-![](https://petcube.com/blog/content/images/2017/08/kitten-supplies-cover.jpg)
-
-<!-- Begin comment
-
-Use the line below if you are sourcing an image from your own computer. For this line to run correctly, you would need to have an image called 'kitten.jpg' in a folder called 'figure' which is in the same folder as this rmd file.
-
-![](figure/kitten.jpg)
-
------------------------------
-**Making image adjustments**
-With some changes to the rmarkdown in the rmd file, you can also to reduce the image size by, say, 50% and make it left aligned:
-<div align="left">
-<img src="figure/kitten.jpg" width="50%" height="50%">
-</div>
------------------------------
-
-Give it a try! Find a picture of a kitten online, save it to your computer as described above and see what happens. 
-
-end comment --->
-
-<br>
-Image source: https://petcube.com/blog/10-all-important-kitten-supplies-infographic/
-
-<br>
-
-## Videos
-
-Below you will find a video embedded into your RMarkdown file. 
-Change the YouTube link in the rmd file to get a different video.
-
-<div style="max-width:640"><div style="position:relative;height:0;padding-bottom:56.25%"><iframe src="https://www.youtube.com/embed/a6KGPBflhiM" width="560" height="315" style="position:absolute;left:0;top:0;width:100%;height:100%" frameborder="0" scrolling="no" allowfullscreen></iframe></div></div>
-
-<br>
-
-## LaTeX
-
-You can even use LaTeX in an RMarkdown document!
-
-For example, how could you work out $\sum_{i=1}^{5} x_{i}^3$?
-
-<br>
-
-## R Code
-
-Here is an R code chunk:
-
-Try the following commands in R.
-```{r,eval=F}
-1+ exp(3) + sin(0.5)
-x=c(1,2,3)
-x^2
-sum(x)
-```
-
-Here is some in-line code `in-line code`. You can put any R code here for display, e.g. `sum(x)`
-
-<br>
-
-# RMarkdown Resources
-Check out the resources below for more information on RMarkdown. 
-
- <i class="fa fa-link"></i>[How to use R Markdown](https://www.oreilly.com/learning/easy-reproducible-reports-with-r?utm_medium=social&utm_source=twitter.com&utm_campaign=lgen&utm_content=data+webcast+ki&cmp=tw-data-na-article-lgen_tw_webcast_ki)
- 
-<i class="fa fa-link"></i>[Mastering Markdown](https://guides.github.com/features/mastering-markdown/)
 
 <br>
