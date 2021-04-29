@@ -1,6 +1,16 @@
 ---
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
 title: "Reproducible Report"
 author: "510100726, 510073464, 500491775, 510046332"
+=======
+title: "Project 2: Impacts of Covid-19 on people' hobbies"
+author: "SID: 510100726, 510073464, 500491775, 510046332"
+>>>>>>> Stashed changes
+=======
+title: "Project 2: Impacts of Covid-19 on people' hobbies"
+author: "SID: 510100726, 510073464, 500491775, 510046332"
+>>>>>>> Stashed changes
 date: "University of Sydney | DATA1001 | 2021"
 output:
   html_document: 
@@ -34,6 +44,7 @@ The aim of this report is to investigate any effects of self-quarantines due to 
 
 A primary, statistical, online survey was conducted where suitable questions for the research were asked. Although this allows for a large amount of information to be collected with minimal effort and cost, some limitations followed in with the advantages. Firstly, since the survey was voluntary, a voluntary response bias and a lack of random sampling had occurred which could lead to distorted results. Since the primary platform in which the survey was posted is mainly used by students from the University of Sydney, most of the data collected were aged between 17 to 23 which does not represent the overall population. On top of this, there was also a limited number of people that had completed the survey (29 respondents), especially within the 2-week short span availability of the survey. Furthermore, there may have been distorted memories of the respondents as certain questions asked about memories from over a year ago (start of quarantine period), questions may have been misinterpreted, and subjective opinions may arise from questions asking the respondents to rate on a scale of 0 to 5, which could to statistical errors.
 
+
 ```{r}
 
 #Load our data
@@ -55,13 +66,7 @@ dim(survey)
 # R's classification of survey's data
 class(survey)
 
-## R's classification of variables
-str(mtcars)
-#sapply(mtcars, class)
 ```
-
-Summary:
-
 
 <br>
 
@@ -98,7 +103,19 @@ ggplot(meanhobby, aes(x=names, y=mean))+labs(title="Comparison between during qu
 
 ```
 
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
 Summary: From the above 2 graphs, it can be seen that most people had picked up 2 hobbies during the quarantine. This can also similarly be seen in the number of hobbies they have as of now. The average number of hobbies people have picked up during quarantine and currently highlight that there is no significant difference but a slight decrease. Although no definite conclusion can be made due to the limitation of the data size, this may have occurred as COVID-19 has settled now, and people have gone back to their normal lives before the pandemic.
+=======
+**Summary:**
+
+From the above 2 graphs, it can be seen that most people had picked up 2 hobbies during the quarantine. This can also similarly be seen in the number of hobbies they have as of now. The average number of hobbies people have picked up during quarantine and currently highlight that there is no significant difference but a slight decrease. Although no definite conclusion can be made due to the limitation of the data size, this may have occurred as COVID-19 has settled now, and people have gone back to their normal lives before the pandemic.
+>>>>>>> Stashed changes
+=======
+**Summary:**
+
+From the above 2 graphs, it can be seen that most people had picked up 2 hobbies during the quarantine. This can also similarly be seen in the number of hobbies they have as of now. The average number of hobbies people have picked up during quarantine and currently highlight that there is no significant difference but a slight decrease. Although no definite conclusion can be made due to the limitation of the data size, this may have occurred as COVID-19 has settled now, and people have gone back to their normal lives before the pandemic.
+>>>>>>> Stashed changes
 
 ## Research Question 2
 
@@ -161,6 +178,12 @@ summary(L)
 L$coeff
 
 abline(L)
+
+
+g <- ggplot(survey, aes(x=survey$covidhobbyno, y=survey$reliance))
+g + xlab("Number of hobbies") + ylab("Reliance")
+g + geom_point() + geom_smooth(method="lm")
+
 
 # Caluculate the linear correlation coefficient
 cor(survey$covidhobbyno, survey$reliance)
