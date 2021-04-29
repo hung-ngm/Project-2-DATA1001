@@ -105,7 +105,7 @@ meanhobby = data.frame(names, mean, se)
 
 
 library(ggplot2)
-ggplot(meanhobby, aes(x=names, y=mean))+labs(title="Comparison between during quarantine and now")+geom_bar(stat='identity')+geom_errorbar( aes(x=names, ymin=mean-se, ymax=mean+se), width=0.2, colour="black", alpha=0.9, size=0.8)+theme(plot.title = element_text(size=16, face="bold.italic",hjust=0.5))
+ggplot(meanhobby, aes(x=names, y=mean))+labs(title="Mean of total number of hobbies during quarantine and now")+geom_bar(stat='identity')+geom_errorbar( aes(x=names, ymin=mean-se, ymax=mean+se), width=0.2, colour="black", alpha=0.9, size=0.8)+theme(plot.title = element_text(size=16, face="bold.italic",hjust=0.5))
 
 ```
 
@@ -126,7 +126,7 @@ library(ggplot2)
 covidtypes = data.frame(covidhobbytypes)
 names(covidtypes)[names(covidtypes) == "Var1"] <- "Hobbies"
 names(covidtypes)[names(covidtypes) == "Freq"] <- "Answers"
-p1 = ggplot(covidtypes, aes(x = Hobbies, y = Answers)) + geom_bar(stat = "identity")+ labs(title="Kind of hobbies people start during Covid?") + theme(
+p1 = ggplot(covidtypes, aes(x = Hobbies, y = Answers)) + geom_bar(stat = "identity")+ labs(title="Types of hobbies people picked during COVID") + theme(
   axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1),
   plot.title = element_text(size=16, face="bold.italic",hjust=0.5)                                                                )
 p1
@@ -143,7 +143,7 @@ nowhobbytypes=table(unlist(nowhobbytypes))
 nowtypes = data.frame(nowhobbytypes)
 names(nowtypes)[names(nowtypes) == "Var1"] <- "Hobbies"
 names(nowtypes)[names(nowtypes) == "Freq"] <- "Answers"
-p2 = ggplot(nowtypes, aes(x = Hobbies, y = Answers)) + geom_bar(stat = "identity")+ labs(title="Kind of hobbies people still do after quarantine") + theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1),
+p2 = ggplot(nowtypes, aes(x = Hobbies, y = Answers)) + geom_bar(stat = "identity")+ labs(title="Types of hobbies people still do after quarantine") + theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1),
       plot.title = element_text(size=16, face="bold.italic", hjust=0.5))
 p2
 
