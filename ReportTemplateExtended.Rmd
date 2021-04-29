@@ -1,32 +1,22 @@
 ---
 title: "Reproducible Report"
 author: "Student/s SID"
-subtitle: "Project 2"
 date: "University of Sydney | DATA1001 | 2021"
-# You can change the title, subtitle, author etc.
-# if you do not want a subtitle, author, or date just delete or comment # the the line!
 output:
-  html_document:
+  html_document: 
     fig_caption: yes
     number_sections: yes
     self_contained: yes
     theme: flatly
-    # Other themes can be found at: https://bootswatch.com/
-    css: 
-      - https://use.fontawesome.com/releases/v5.0.6/css/all.css
-    #This will allow you to insert icons in your document, thanks to [Font Awesome](http://fontawesome.io).
-    #You will find an examples below.
-    # If you are knitting your document but not connected to the internet, place a "#" in front of the css line above with the font-awesome.min.css line to comment it out. This will let you knit the document in draft form until you connect again and knit the final. Note that when you do this some elements will be missing from the knitted slides. 
-    toc: true
-    #This adds a Table of Contents (toc).
+    css: https://use.fontawesome.com/releases/v5.0.6/css/all.css
+    toc: yes
     toc_depth: 3
-    #This controls the number of subheadings included in the toc.
-    toc_float: true
-    #This allows toc to update relative to your location as you scroll down the html page.
+    toc_float: yes
     code_folding: hide
-    #code_folding can be changed to "hide"" if you want the all your code to be collapsed when you open the document
-    
-    # More information: http://rmarkdown.rstudio.com/html_document_format.html
+  pdf_document:
+    toc: yes
+    toc_depth: '3'
+subtitle: Project 2
 ---
 
 <br>
@@ -79,7 +69,7 @@ Summary:
 
 ## Research Question 1
 
-How did COVID-19 affected people’s hobbies → Number of hobbies during and after covid, bar graph
+### How did COVID-19 affected people’s hobbies? 
 
 ```{r}
 # Number of hobbies picked up during quarantine
@@ -114,7 +104,7 @@ Summary:
 
 ## Research Question 2
 
-What kind of hobbies people start doing during Covid?
+### What kind of hobbies people start doing during Covid?
 
 ```{r}
 covidhobbytypes=strsplit(survey$covidhobbytype, ", ")
@@ -133,7 +123,7 @@ p1
 
 ```
 
-What kinds of hobbies people still do after quarantine?
+### What kinds of hobbies people still do after quarantine?
 
 ```{r}
 
@@ -152,7 +142,7 @@ p2
 
 ## Research Question 3
 
-Is there a linear relationship between the number of hobbies and people’s reliance of hobbies (number of hobbies vs comfort level)
+### Is there a linear relationship between the number of hobbies and people’s reliance of hobbies (number of hobbies vs comfort level)
 
 ```{r}
 # Construct a scatter plot
