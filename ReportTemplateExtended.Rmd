@@ -45,6 +45,7 @@ The aim of this report is to investigate any effects of self-quarantines due to 
 ## Initial Data Analysis (IDA)
 
 A primary, statistical, online survey was conducted where suitable questions for the research were asked. Although this allows for a large amount of information to be collected with minimal effort and cost, some limitations followed in with the advantages. Firstly, since the survey was voluntary, a voluntary response bias and a lack of random sampling had occurred which could lead to distorted results. Since the primary platform in which the survey was posted is mainly used by students from the University of Sydney, most of the data collected were aged between 17 to 23 which does not represent the overall population. On top of this, there was also a limited number of people that had completed the survey (29 respondents), especially within the 2-week short span availability of the survey. Furthermore, there may have been distorted memories of the respondents as certain questions asked about memories from over a year ago (start of quarantine period), questions may have been misinterpreted, and subjective opinions may arise from questions asking the respondents to rate on a scale of 0 to 5, which could to statistical errors.
+
 ```{r}
 
 #Load our data
@@ -82,14 +83,14 @@ How did COVID-19 affected people’s hobbies → Number of hobbies during and af
 
 ```{r}
 # Number of hobbies picked up during quarantine
-barplot(table(survey$covidhobbyno), main="Number of hobbies picked up during quarantine")
+barplot(table(survey$covidhobbyno), main="Number of hobbies picked up during quarantine", xlab="Number of hobbies", ylab="Answers")
 
 summary(survey$covidhobbyno)
 
 mean(survey$covidhobbyno)
 
 #Number of hobbies now
-barplot(table(survey$nowhobbyno), main="Number of hobbies now")
+barplot(table(survey$nowhobbyno), main="Number of hobbies now", xlab="Number of hobbies", ylab="Answers")
 
 summary(survey$nowhobbyno)
 ```
