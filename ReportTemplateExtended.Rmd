@@ -1,6 +1,6 @@
 ---
 title: "Reproducible Report"
-author: "Student/s SID"
+author: ""
 date: "University of Sydney | DATA1001 | 2021"
 output:
   html_document: 
@@ -23,8 +23,6 @@ subtitle: Project 2
 
 # Executive Summary
 The aim of this report is to investigate any effects of self-quarantines due to COVID-19 on people’s hobbies. We have observed that, though not significant, people dropped few of their hobbies when their quarantine was over. We also investigated the relation between how many hobbies people picked up and how reliant they were to their hobbies as a coping mechanism. However we concluded that they were not related, due to low correlation values
-
-
 
 <br>
 
@@ -85,6 +83,7 @@ barplot(table(survey$nowhobbyno), main="Number of hobbies now", xlab="Number of 
 summary(survey$nowhobbyno)
 ```
 
+
 ```{r}
 library(multicon)
 
@@ -95,14 +94,14 @@ meanhobby = data.frame(names, mean, se)
 
 
 library(ggplot2)
-ggplot(meanhobby, aes(x=names, y=mean))+labs(title="Mean of total number of hobbies during quarantine and now")+geom_bar(stat='identity')+geom_errorbar( aes(x=names, ymin=mean-se, ymax=mean+se), width=0.2, colour="black", alpha=0.9, size=0.8)+theme(plot.title = element_text(size=16, face="bold.italic",hjust=0.5))
+ggplot(meanhobby, aes(x=names, y=mean))+labs(title="Comparison between during quarantine and now")+geom_bar(stat='identity')+geom_errorbar( aes(x=names, ymin=mean-se, ymax=mean+se), width=0.2, colour="black", alpha=0.9, size=0.8)+theme(plot.title = element_text(size=16, face="bold.italic",hjust=0.5))
 
 ```
 
 Summary: 
 
-
 ## Research Question 2
+
 
 ### What kind of hobbies people start doing during Covid?
 
@@ -116,7 +115,7 @@ library(ggplot2)
 covidtypes = data.frame(covidhobbytypes)
 names(covidtypes)[names(covidtypes) == "Var1"] <- "Hobbies"
 names(covidtypes)[names(covidtypes) == "Freq"] <- "Answers"
-p1 = ggplot(covidtypes, aes(x = Hobbies, y = Answers)) + geom_bar(stat = "identity")+ labs(title="Types of hobbies people picked during COVID") + theme(
+p1 = ggplot(covidtypes, aes(x = Hobbies, y = Answers)) + geom_bar(stat = "identity")+ labs(title="Kind of hobbies people start during Covid?") + theme(
   axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1),
   plot.title = element_text(size=16, face="bold.italic",hjust=0.5)                                                                )
 p1
@@ -133,12 +132,17 @@ nowhobbytypes=table(unlist(nowhobbytypes))
 nowtypes = data.frame(nowhobbytypes)
 names(nowtypes)[names(nowtypes) == "Var1"] <- "Hobbies"
 names(nowtypes)[names(nowtypes) == "Freq"] <- "Answers"
-p2 = ggplot(nowtypes, aes(x = Hobbies, y = Answers)) + geom_bar(stat = "identity")+ labs(title="Types of hobbies people still do after quarantine") + theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1),
+p2 = ggplot(nowtypes, aes(x = Hobbies, y = Answers)) + geom_bar(stat = "identity")+ labs(title="Kind of hobbies people still do after quarantine") + theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1),
       plot.title = element_text(size=16, face="bold.italic", hjust=0.5))
 p2
 
 
 ```
+
+**Summary:**
+
+There are a wide range of hobbies people picked up during COVID. A study showed that media usage such as gaming and watching movies were more frequent during the peak of COVID, similar to the findings of our study (Krause 2021). Our data complies with this suggestion as it indicates that movies and gaming were two of the most picked hobbies during COVID; next to sports, music and baking. We observe a not very significant, but notable decrease in people playing video games after the quarantine, unlike the other hobbies. Though it is not conclusive, due to our data size, we can observe that when people went back to their regular lives they started to spend less time playing video games.
+
 
 ## Research Question 3
 
@@ -167,7 +171,9 @@ abline(h = 0, col = "blue")
 
 ```
 
-Summary: 
+**Summary:** 
+
+A study highlighted that hobbies can be a coping strategy and it is also beneficial for our mental and physical health (Merschel, 2020). We investigated the relationship between the number of hobbies people picked up to how much they relied on their hobbies as a coping mechanism to see whether the reliance on their hobbies affected the number of hobbies picked. However the residual plot of our data showed a clear linear pattern. This might’ve been caused because we chose a variable that was not very continuous. But even the result of our scatter plot and correlation gave a very low relation between reliance and number of hobbies (r=0.207), suggesting that there is no significant relation between reliance and the number of hobbies picked during COVID.
 
 
 # References
@@ -179,7 +185,6 @@ APA:
 
 
 <br>
-
 
 # Beyond the Basics - extending your abilities with RMarkdown
 This quick reference guide will cover some basic RMarkdown for use in your projects. 
