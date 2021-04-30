@@ -1,0 +1,202 @@
+---
+title: "Project 2: Impacts of Covid-19 on people' hobbies"
+author: "SID: 510100726, 510073464, 500491775, 510046332"
+date: "University of Sydney | DATA1001 | 2021"
+output:
+  html_document: 
+    fig_caption: yes
+    number_sections: yes
+    self_contained: yes
+    theme: flatly
+    css: https://use.fontawesome.com/releases/v5.0.6/css/all.css
+    toc: yes
+    toc_depth: 3
+    toc_float: yes
+    code_folding: hide
+  pdf_document:
+    toc: yes
+    toc_depth: '3'
+subtitle: Project 2
+---
+
+<br>
+
+# Executive Summary
+The aim of this report is to investigate any effects of self-quarantines due to COVID-19 on people’s hobbies. We have observed that, though not significant, people dropped few of their hobbies when their quarantine was over. We also investigated the relation between how many hobbies people picked up and how reliant they were to their hobbies as a coping mechanism. However we concluded that they were not related, due to low correlation values
+
+<br>
+
+<br>
+
+# Full Report
+
+## Initial Data Analysis (IDA)
+
+A primary, statistical, online survey was conducted where suitable questions for the research were asked. Although this allows for a large amount of information to be collected with minimal effort and cost, some limitations followed in with the advantages. Firstly, since the survey was voluntary, a voluntary response bias and a lack of random sampling had occurred which could lead to distorted results. Since the primary platform in which the survey was posted is mainly used by students from the University of Sydney, most of the data collected were aged between 17 to 23 which does not represent the overall population. On top of this, there was also a limited number of people that had completed the survey (29 respondents), especially within the 2-week short span availability of the survey. Furthermore, there may have been distorted memories of the respondents as certain questions asked about memories from over a year ago (start of quarantine period), questions may have been misinterpreted, and subjective opinions may arise from questions asking the respondents to rate on a scale of 0 to 5, which could to statistical errors.
+
+
+```{r}
+
+#Load our data
+survey = read.csv("HobbiesCOVID19.csv")
+
+# Remove the Timestamp column as it is not necessary for our report
+survey$Timestamp <- NULL
+
+# Quick look at the structure of data
+str(survey)
+
+# Quick look at top 5 rows of data
+head(survey) 
+# Our data has 29 rows and 9 columns
+
+# Size of the data
+dim(survey)
+
+# R's classification of survey's data
+class(survey)
+
+```
+
+<br>
+
+## Research Question 1
+
+### How did COVID-19 affected people’s hobbies? 
+
+```{r}
+# Number of hobbies picked up during quarantine
+barplot(table(survey$covidhobbyno), main="Number of hobbies picked up during quarantine", xlab="Number of hobbies", ylab="Answers")
+
+summary(survey$covidhobbyno)
+
+mean(survey$covidhobbyno)
+
+#Number of hobbies now
+barplot(table(survey$nowhobbyno), main="Number of hobbies now", xlab="Number of hobbies", ylab="Answers")
+
+summary(survey$nowhobbyno)
+```
+
+
+```{r}
+library(multicon)
+
+mean=c(mean(survey$covidhobbyno), mean(survey$nowhobbyno))
+names= c("COVID", "Now")
+se= c(popsd(survey$covidhobbyno)/sqrt(length(survey$covidhobbyno)), popsd(survey$nowhobbyno)/sqrt(length(survey$nowhobbyno)))
+meanhobby = data.frame(names, mean, se)
+
+
+library(ggplot2)
+ggplot(meanhobby, aes(x=names, y=mean))+labs(title="Comparison between during quarantine and now")+geom_bar(stat='identity')+geom_errorbar( aes(x=names, ymin=mean-se, ymax=mean+se), width=0.2, colour="black", alpha=0.9, size=0.8)+theme(plot.title = element_text(size=16, face="bold.italic",hjust=0.5))
+
+```
+
+**Summary:**
+
+From the above 2 graphs, it can be seen that most people had picked up 2 hobbies during the quarantine. This can also similarly be seen in the number of hobbies they have as of now. The average number of hobbies people have picked up during quarantine and currently highlight that there is no significant difference but a slight decrease. Although no definite conclusion can be made due to the limitation of the data size, this may have occurred as COVID-19 has settled now, and people have gone back to their normal lives before the pandemic.
+
+## Research Question 2
+
+
+### What kind of hobbies people start doing during Covid?
+
+```{r}
+covidhobbytypes=strsplit(survey$covidhobbytype, ", ")
+covidhobbytypes=table(unlist(covidhobbytypes))
+
+# Install packages ggplot2
+library(ggplot2)
+
+covidtypes = data.frame(covidhobbytypes)
+names(covidtypes)[names(covidtypes) == "Var1"] <- "Hobbies"
+names(covidtypes)[names(covidtypes) == "Freq"] <- "Answers"
+p1 = ggplot(covidtypes, aes(x = Hobbies, y = Answers)) + geom_bar(stat = "identity")+ labs(title="Kind of hobbies people start during Covid?") + theme(
+  axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1),
+  plot.title = element_text(size=16, face="bold.italic",hjust=0.5)                                                                )
+p1
+
+```
+
+### What kinds of hobbies people still do after quarantine?
+
+```{r}
+
+nowhobbytypes=strsplit(survey$nowhobbytype, ", ")
+nowhobbytypes=table(unlist(nowhobbytypes))
+
+nowtypes = data.frame(nowhobbytypes)
+names(nowtypes)[names(nowtypes) == "Var1"] <- "Hobbies"
+names(nowtypes)[names(nowtypes) == "Freq"] <- "Answers"
+p2 = ggplot(nowtypes, aes(x = Hobbies, y = Answers)) + geom_bar(stat = "identity")+ labs(title="Kind of hobbies people still do after quarantine") + theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1),
+      plot.title = element_text(size=16, face="bold.italic", hjust=0.5))
+p2
+
+
+```
+
+**Summary:**
+
+There are a wide range of hobbies people picked up during COVID. A study showed that media usage such as gaming and watching movies were more frequent during the peak of COVID, similar to the findings of our study (Krause 2021). Our data complies with this suggestion as it indicates that movies and gaming were two of the most picked hobbies during COVID; next to sports, music and baking. We observe a not very significant, but notable decrease in people playing video games after the quarantine, unlike the other hobbies. Though it is not conclusive, due to our data size, we can observe that when people went back to their regular lives they started to spend less time playing video games.
+
+
+## Research Question 3
+
+### Is there a linear relationship between the number of hobbies and people’s reliance of hobbies (number of hobbies vs comfort level)
+
+```{r}
+# Construct a scatter plot
+library(ggplot2)
+plot(survey$covidhobbyno, survey$reliance, xlab = "Number of hobbies", ylab = "Reliance")
+
+# Calculate the linear regression model to draw on the scatter plot
+L = lm(survey$covidhobbyno ~ survey$reliance)
+
+summary(L)
+
+L$coeff
+
+abline(L)
+
+# Caluculate the linear correlation coefficient
+cor(survey$covidhobbyno, survey$reliance)
+
+#residual
+plot(survey$covidhobbyno,L$residuals, xlab = "Number of hobbies", ylab = "Reliance")
+abline(h = 0, col = "blue")
+
+```
+
+**Summary:** 
+
+A study highlighted that hobbies can be a coping strategy and it is also beneficial for our mental and physical health (Merschel, 2020). We investigated the relationship between the number of hobbies people picked up to how much they relied on their hobbies as a coping mechanism to see whether the reliance on their hobbies affected the number of hobbies picked. However the residual plot of our data showed a clear linear pattern. This might’ve been caused because we chose a variable that was not very continuous. But even the result of our scatter plot and correlation gave a very low relation between reliance and number of hobbies (r=0.207), suggesting that there is no significant relation between reliance and the number of hobbies picked during COVID.
+
+
+# References
+
+APA: 
+
+- Krause, A.E., Dimmock, J., Rebar, A.L. and Jackson, B. (2021). Music Listening Predicted Improved Life Satisfaction in University Students During Early Stages of the COVID-19 Pandemic. Frontiers in Psychology, 11.
+- Michael Merschel (2020). Your pandemic hobby might be doing more good than you know. American Heart Association News. Accessed 20 April 2021.
+
+# Acknowledgements and contribution:
+
+Meeting at April 13th 1:00pm, members participated: Min Seok Kim and Hina Okada
+
+Meeting at April 18th 9:00pm, members participated: Min Seok Kim, Minh Hung, Paul, Hina Okada
+
+Meeting at April 22nd 2:00pm, members participated: Min Seok Kim and Hina Okada
+
+Meeting at April 25th 8:00pm, members participated: Min Seok Kim and Hina Okada
+
+Meeting at April 29th 7:00pm, members participated: Min Seok Kim, Minh Hung, Paul, Hina Okada
+
+Min Seok Kim: coding, research question, and executive summary
+
+Hina Okada: IDA, articles, and research question
+
+Min Hung Nguyen: coding, research question, and submission of the work
+
+Tianhao Song:
+
